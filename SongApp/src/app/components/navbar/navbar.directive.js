@@ -1,28 +1,30 @@
 (function() {
-  'use strict';
+    'use strict';
 
-  angular
-    .module('songApp')
-    .directive('songAppNavbar', songAppNavbar);
-
-  /** @ngInject */
-  function songAppNavbar() {
-    var directive = {
-      restrict: 'E',
-      templateUrl: 'app/components/navbar/navbar.html',
-      scope: {
-          creationDate: '='
-      },
-      controller: NavbarController,
-      controllerAs: 'vm',
-      bindToController: true
-    };
-
-    return directive;
+    angular
+        .module('songApp')
+        .directive('songAppNavbar', songAppNavbar);
 
     /** @ngInject */
-    function NavbarController() {
+    function songAppNavbar() {
+        var directive = {
+            restrict: 'E',
+            templateUrl: 'app/components/navbar/navbar.html',
+            scope: {
+                creationDate: '='
+            },
+            controller: NavbarController,
+            controllerAs: 'vm',
+            bindToController: true
+        };
+
+        return directive;
+
+        /** @ngInject */
+        function NavbarController() {
+
+
+        }
     }
-  }
 
 })();

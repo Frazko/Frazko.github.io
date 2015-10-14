@@ -7,13 +7,9 @@
 
   /** @ngInject */
   function runBlock() {
-
-
-
   	$(document).ready(function() {  
         $(".playListGrid").niceScroll({})
     });
-
   }
 
 })();

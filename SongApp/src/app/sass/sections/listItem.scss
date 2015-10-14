@@ -8,23 +8,20 @@
 
     height: 55%;
     overflow: scroll;
-    border: 1px solid red;
+    //border: 1px solid red;
 }
 
 .leftGridItem {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    width: 140px;
+    transform: translateY(-50%);    
     float: left;
+
+    white-space: nowrap;
+    width: 120px;
+    overflow: hidden;
 }
 
-.rightGridItem {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 15px;
-}
 
 
 .flex-container {
@@ -58,18 +55,21 @@
 .playListItem {
     display: inline-block;
     width: 50%;
-    padding-left: 15px;
+    padding-left: 12px;
 }
 
 .playListItem>h1 {
+    font-family: "DIN Medium";
     margin: 0;
     padding: 0;
-    font-size: 10px;
+    font-size: 11px;
     line-height: 160%;
     color: #000;
 }
 
 .playListItem>p {
+    font-family: Arial;
+    font-style: italic;
     margin: 0;
     padding: 0;
     font-size: 8px;
@@ -78,66 +78,58 @@
 }
 
 
-/*///////////////////////////////        fieldset*/
+/*///////////////////////////////        toggle buttons*/
 
-.fieldset>div {
-    text-align: right;
+.rightGridItem {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 12px;
 }
 
 .fieldset {
     display: inline-block;
     padding: 0;
     margin: 0;
-    float: right;
 }
 
-label {
+.fieldset>div {
+    text-align: right;
+}
+
+
+.toggleBtn {
     @extend .yellowButtonGradient;
     cursor: pointer;
     display: block;
     float: left;
     padding: .2em .4em;
     box-shadow: 1px 1px 1px rgba(255, 255, 255, .2) inset, -1px -1px 1px rgba(0, 0, 0, .2) inset;
-
-
     font-family: 'TitilliumText22L001';
     width: 51px;
     height: 21px;
-    font-size: 9px;
+    font-size: 11px;
     line-height: 15px;
-
-    font-weight: 'bold';
-
+    font-weight: bold;
     text-align: center;
-
     margin-top: 5px;
+    color: #000;
 }
 
-label:first-child {
+.dtLeft {
     border-left-width: 1px;
-    border-top-left-radius: .6em;
-    border-bottom-left-radius: .6em;
+    border-top-left-radius: .5em;
+    border-bottom-left-radius: .5em;
 }
 
-label:last-child {
-    border-top-right-radius: .6em;
-    border-bottom-right-radius: .6em;
+.dtRight {
+    border-top-right-radius: .5em;
+    border-bottom-right-radius: .5em;
 }
 
-label.selected {
-    @extend .yellowButtonGradientDark;
-    color: white;
-    border-color: $yellowButtonGradientDark;
+.selected, .active , .toggleBtn:hover {
+    background: $yellowButtonGradientDark !important;
+    background-color: $yellowButtonGradientDark !important;
+    color: #000;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, .2) inset;
 }
-
-label.warning.selected {
-    background-color: red;
-}
-
-input[type="radio"] {
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-}
-

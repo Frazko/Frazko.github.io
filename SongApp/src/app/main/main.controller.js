@@ -6,43 +6,16 @@
         .controller('MainController', MainController);
 
     /** @ngInject */
-    function MainController() {
-        getJsonListService.$inject = ['getJsonListService'];
+    function MainController($rootScope, $scope) {
+        MainController.$inject = ['$rootScope', '$scope'];
+        console.log('MainController!!!');
 
 
-        getJsonListService.getData().then(function(data) {
-            $scope.data = data;
-            console.log('>> algo !! ' + data);
-            fillData();
-        });
-
+        $scope.searchTerm={};
+        $scope.searchTerm.query="";
 
 
 
-        //console.log('categoryId :: ' + $stateParams.categoryId);
-
-        function fillData() {
-            console.log('MainController:: fillData :: ');
-
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-        activate();
-
-        function activate() {
-            console.log('MainController::Activate!!!');
-
-        }
 
     }
 })();
