@@ -1,0 +1,42 @@
+/* main */
+
+
+//-----------------------------------------------------------------------------------CHARSET SECTION ----------------
+@charset "UTF-8";
+
+
+//-----------------------------------------------------------------------------------RESET SECTION ----------------
+//reset
+@import "global/reset";
+//-----------------------------------------------------------------------------------GLOBAL SECTION ----------------
+@import "global/variables";
+@import "global/mixins";
+@import "global/fonts";
+@import "global/states";
+@import "global/nav";
+@import "global/components";
+
+//sectionS imports
+//-----------------------------------------------------------------------------------home SECTION ----------------
+@import "sections/home";
+//-----------------------------------------------------------------------------------home SECTION ----------------
+@import "sections/listItem";
+
+//-----------------------------------------------------------------------------------home SECTION ----------------
+
+
+/**
+ *  Do not remove this comments bellow. It's the markers used by wiredep to inject
+ *  sass dependencies when defined in the bower.json of your dependencies
+ */
+
+// bower:scss
+// endbower
+
+/**
+ *  Do not remove this comments bellow. It's the markers used by gulp-inject to inject
+ *  all your sass files automatically
+ */
+
+// injec to r
+// end injecto r

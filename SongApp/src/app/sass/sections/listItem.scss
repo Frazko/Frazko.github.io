@@ -1,0 +1,143 @@
+
+.playListGrid {
+    position: absolute;
+    margin: 0 auto;
+    top: 142px;
+    left: calc(50% - 133px);
+
+
+    height: 55%;
+    overflow: scroll;
+    border: 1px solid red;
+}
+
+.leftGridItem {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 140px;
+    float: left;
+}
+
+.rightGridItem {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15px;
+}
+
+
+.flex-container {
+    font-family: Arial, Serif;
+    width: 264px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.flex-item {
+    position: relative;
+    width: 100%;
+    height: 45px;
+    padding-left: 15px;
+    background: rgba(255, 255, 255, .5);
+    margin-bottom: 1px;
+    //border: 1px solid red;
+}
+
+.playBtn {
+    display: inline-block;
+    margin-top: 4px;
+    background-image: url(../assets/images/musicApp_playBtn.png);
+    width: 21px;
+    height: 21px;
+    background-size: 21px 21px;
+    background-color: #db58b4;
+}
+
+.playListItem {
+    display: inline-block;
+    width: 50%;
+    padding-left: 15px;
+}
+
+.playListItem>h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+    line-height: 160%;
+    color: #000;
+}
+
+.playListItem>p {
+    margin: 0;
+    padding: 0;
+    font-size: 8px;
+    font-style: italic;
+    color: #333;
+}
+
+
+/*///////////////////////////////        fieldset*/
+
+.fieldset>div {
+    text-align: right;
+}
+
+.fieldset {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    float: right;
+}
+
+label {
+    @extend .yellowButtonGradient;
+    cursor: pointer;
+    display: block;
+    float: left;
+    padding: .2em .4em;
+    box-shadow: 1px 1px 1px rgba(255, 255, 255, .2) inset, -1px -1px 1px rgba(0, 0, 0, .2) inset;
+
+
+    font-family: 'TitilliumText22L001';
+    width: 51px;
+    height: 21px;
+    font-size: 9px;
+    line-height: 15px;
+
+    font-weight: 'bold';
+
+    text-align: center;
+
+    margin-top: 5px;
+}
+
+label:first-child {
+    border-left-width: 1px;
+    border-top-left-radius: .6em;
+    border-bottom-left-radius: .6em;
+}
+
+label:last-child {
+    border-top-right-radius: .6em;
+    border-bottom-right-radius: .6em;
+}
+
+label.selected {
+    @extend .yellowButtonGradientDark;
+    color: white;
+    border-color: $yellowButtonGradientDark;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .2) inset;
+}
+
+label.warning.selected {
+    background-color: red;
+}
+
+input[type="radio"] {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+
