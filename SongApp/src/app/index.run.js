@@ -8,7 +8,9 @@
   /** @ngInject */
   function runBlock() {
   	$(document).ready(function() {  
-        $(".playListGrid").niceScroll({})
+      //console.log('Document Ready.');
+      //console.log('NiceScroll Launch.');
+        $(".playListGrid").niceScroll();
     });
   }
 

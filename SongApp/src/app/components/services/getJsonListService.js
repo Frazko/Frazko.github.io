@@ -15,7 +15,9 @@
         function _loadData() {
             if (!defer) {
                 defer = $q.defer();
+                //$http.get('db/songs.json/songs').success(function(data) {
                 $http.get('http://localhost:3000/songs').success(function(data) {
+                //$http.get('http://192.168.1.6:3000/songs').success(function(data) {
                     _data = data;
                     //console.log(' -- LOADING FILE FOR DATA !!' + JSON.stringify(data));
                     defer.resolve(data);

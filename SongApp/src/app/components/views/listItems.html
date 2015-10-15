@@ -1,0 +1,22 @@
+<div class="playListGrid">
+    <ul class="flex-container">
+        <li class="flex-item" ng-repeat="song in songs | filter:filterTerm">
+            <div class="leftGridItem">
+                <a href="{{getHttpURL(song.url)}}" target="_blank">
+                    <div class="playBtn"></div>
+                </a>
+                <div class="playListItem">
+                    <h1>{{song.songname | capitalize}}</h1>
+                    <p>{{song.artistname | capitalize}}</p>
+                </div>
+            </div>
+            <div class="rightGridItem">
+                <div class="fieldset">
+                    <div>
+                        <toggle-buttons data-toggle="buttons-radio" model='selected' options='["Today", "Friday"]' />
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>

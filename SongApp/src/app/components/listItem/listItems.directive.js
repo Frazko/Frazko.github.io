@@ -10,7 +10,7 @@
         var directive = {
             restrict: 'E',
             transclude: true,
-            templateUrl: 'app/components/listItem/listItems.html',
+            templateUrl: 'app/components/views/listItems.html',
             controller: listItemsController,
             bindToController: true
         };
@@ -22,13 +22,6 @@
             listItemsController.$inject = ['$rootScope', '$scope', 'getJsonListService'];
             console.log('listItemsController!!!');
 
-
-            $scope.songs = [];
-
-            getJsonListService.getData().then(function(data) {
-                $scope.songs = data;
-                console.log('>> listItemsController !! ' + $scope.songs);
-            });
 
 
         }

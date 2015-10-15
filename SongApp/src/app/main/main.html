@@ -20,11 +20,17 @@
             </div>
         </div>
         <div class='searchbox'>
-            <i class="fa fa-search"></i>
-            <input type="text" placeholder="Search Music" maxlength="18" ng-model="searchTerm.query"></input>
-            <!--<div>{{searchTerm.query}}</div>-->
+            <a href="#" ng-click="searchSong()">
+                <i class="fa fa-search"></i>
+            </a>
+            <input type="text" placeholder="Search Music" maxlength="18" key-enter="searchSong()" ng-model="inputTerm"></input>
         </div>
-        <list-items />
+        <div>
+            <list-items />
+        </div>
+        <div>
+            <preloader id="preloader" ng-show="isLoadingData" />
+        </div>
     </section>
     <footer>
         <div class="footerContainer">

@@ -7,7 +7,6 @@
 
     /** @ngInject */
     function config() {
-        // Enable log
 
     }
 
