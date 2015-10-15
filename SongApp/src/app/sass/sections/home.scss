@@ -1,27 +1,11 @@
-
-
-
-
-@include breakpoint('phone') {
-    //background-color: #635C99;
-    //
-    .homeThumbnail {
-        height: 90px;
-    }
-    .thumbCopy {
-        right: 80px;
-    }
-    li {
-        margin-bottom: 8px;
-    }
+.mainWrapper{
+    min-height: 300px;
 }
 
+
+
 @include breakpoint('tablet') {
-    //background-color: #147283;
-    .homeThumbnail {
-        height: 120px;
-    }
-    .thumbCopy {
-        right: 40px;
-    }
+}
+
+@include breakpoint('desktop') {
 }

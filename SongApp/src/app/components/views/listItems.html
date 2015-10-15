@@ -1,6 +1,6 @@
 <div class="playListGrid">
     <ul class="flex-container">
-        <li class="flex-item" ng-repeat="song in songs | filter:filterTerm">
+        <li class="flex-item {{getStripedRows($index)}}" ng-repeat="song in songs | filter:filterTerm" >
             <div class="leftGridItem">
                 <a href="{{getHttpURL(song.url)}}" target="_blank">
                     <div class="playBtn"></div>

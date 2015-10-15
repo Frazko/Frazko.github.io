@@ -1,91 +1,131 @@
-
 .playListGrid {
-    position: absolute;
-    margin: 0 auto;
+    @include centerer(true, false);
     top: 142px;
-    left: calc(50% - 133px);
-
-
-    height: 55%;
+    height: 320px;
     overflow: scroll;
-    //border: 1px solid red;
+    //
+    @include breakpoint('tablet') {
+        height: 410px;
+        top: 210px;
+    }
+    @include breakpoint('desktop') {
+        height: 410px;
+        top: 260px;
+    }
+    .flex-container {
+        font-family: Arial, Serif;
+        width: 264px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        @include breakpoint('tablet') {
+            width: 400px;
+        }
+        @include breakpoint('desktop') {
+            width: 440px;
+        }
+        .flex-item {
+            position: relative;
+            width: 259px;
+            height: 45px;
+            padding-left: 15px;
+            margin-bottom: 1px;
+            //
+            @include breakpoint('tablet') {
+                width: 400px;
+                height: 52px;
+            }
+            @include breakpoint('desktop') {
+                width: 440px;
+                height: 52px;
+            }
+            //
+            .leftGridItem {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                float: left;
+                white-space: nowrap;
+                width: 120px;
+                overflow: hidden;
+                a {
+                    .playBtn {
+                        display: inline-block;
+                        margin-top: 4px;
+                        background-image: url(../assets/images/musicApp_playBtn.png);
+                        width: 21px;
+                        height: 21px;
+                        background-size: 21px 21px;
+                        background-color: #db58b4;
+                        //
+                        @include breakpoint('tablet') {
+                            width: 29px;
+                            height: 29px;
+                            background-size: 29px 29px;
+                        }
+                        @include breakpoint('desktop') {
+                            width: 29px;
+                            height: 29px;
+                            background-size: 29px 29px;
+                        }
+                    }
+                }
+            }
+            .rightGridItem {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 12px;
+            }
+            @include breakpoint('tablet') {
+                height: 52px;
+                .leftGridItem {
+                    width: 300px;
+                }
+            }
+            @include breakpoint('desktop') {
+                height: 52px;
+                .leftGridItem {
+                    width: 300px;
+                }
+            }
+        }
+    }
 }
 
-.leftGridItem {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);    
-    float: left;
-
-    white-space: nowrap;
-    width: 120px;
-    overflow: hidden;
-}
-
-
-
-.flex-container {
-    font-family: Arial, Serif;
-    width: 264px;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-.flex-item {
-    position: relative;
-    width: 100%;
-    height: 45px;
-    padding-left: 15px;
+.at50 {
     background: rgba(255, 255, 255, .5);
-    margin-bottom: 1px;
-    //border: 1px solid red;
 }
 
-.playBtn {
-    display: inline-block;
-    margin-top: 4px;
-    background-image: url(../assets/images/musicApp_playBtn.png);
-    width: 21px;
-    height: 21px;
-    background-size: 21px 21px;
-    background-color: #db58b4;
+.at30 {
+    background: rgba(255, 255, 255, .3);
 }
 
 .playListItem {
     display: inline-block;
     width: 50%;
     padding-left: 12px;
-}
-
-.playListItem>h1 {
-    font-family: "DIN Medium";
-    margin: 0;
-    padding: 0;
-    font-size: 11px;
-    line-height: 160%;
-    color: #000;
-}
-
-.playListItem>p {
-    font-family: Arial;
-    font-style: italic;
-    margin: 0;
-    padding: 0;
-    font-size: 8px;
-    font-style: italic;
-    color: #333;
+    h1 {
+        font-family: "DIN Medium";
+        margin: 0;
+        padding: 0;
+        @include res-font(320px, 11px, 768px, 12.5px, 1024px, 14px);
+        line-height: 160%;
+        color: #000;
+    }
+    p {
+        font-family: Arial;
+        font-style: italic;
+        margin: 0;
+        padding: 0;
+        @include res-font(320px, 8px, 768px, 10px, 1024px, 11px);
+        font-style: italic;
+        color: #333;
+    }
 }
 
 
 /*///////////////////////////////        toggle buttons*/
-
-.rightGridItem {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 12px;
-}
 
 .fieldset {
     display: inline-block;
@@ -96,7 +136,6 @@
 .fieldset>div {
     text-align: right;
 }
-
 
 .toggleBtn {
     @extend .yellowButtonGradient;
@@ -114,20 +153,31 @@
     text-align: center;
     margin-top: 5px;
     color: #000;
+    @include breakpoint('tablet') {
+        width: 71px;
+        height: 30px;
+        font-size: 14px;
+        line-height: 20px;
+    }
+    @include breakpoint('desktop') {
+        width: 71px;
+        height: 30px;
+        font-size: 14px;
+        line-height: 20px;
+    }
 }
 
 .dtLeft {
-    border-left-width: 1px;
-    border-top-left-radius: .5em;
-    border-bottom-left-radius: .5em;
+    @include border-left-radius(0.5em);
 }
 
 .dtRight {
-    border-top-right-radius: .5em;
-    border-bottom-right-radius: .5em;
+    @include border-right-radius(0.5em);
 }
 
-.selected, .active , .toggleBtn:hover {
+.selected,
+.active,
+.toggleBtn:hover {
     background: $yellowButtonGradientDark !important;
     background-color: $yellowButtonGradientDark !important;
     color: #000;

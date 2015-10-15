@@ -22,6 +22,14 @@
             listItemsController.$inject = ['$rootScope', '$scope', 'getJsonListService'];
             console.log('listItemsController!!!');
 
+            $scope.getStripedRows = function(id) {
+                if (id % 2 == 0) {
+                    return 'at50';
+                } else {
+                    return 'at30';
+                }
+            }
+
 
 
         }

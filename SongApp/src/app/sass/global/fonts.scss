@@ -1,5 +1,16 @@
 /* fonts */
 
+
+@include fontFace('FontAwesome', '../fonts/fontawesome-webfont');
+
+@include fontFace('DIN Medium', '../fonts/din_medium-webfont');
+
+@include fontFace('SameSameButDifferent', '../fonts/samesamebutdifferent-webfont');
+
+@include fontFace('TitilliumText22L001', '../fonts/titilliumtext22l001-webfont');
+
+
+/*
 @font-face {
   font-family: 'FontAwesome';
   src: url('../fonts/fontawesome-webfont.eot?v=4.3.0');
@@ -39,6 +50,10 @@
   font-weight: normal;
   font-style: normal;
 }
+*/
+
+
+
 
 
 

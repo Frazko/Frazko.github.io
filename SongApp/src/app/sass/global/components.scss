@@ -30,8 +30,6 @@
     }
 }
 
-
-
 @-webkit-keyframes sk-bouncedelay {
     0%,
     80%,
@@ -57,18 +55,24 @@
 }
 
 
-
 /*--------------------------------------------------------------------------------- Hangar Header */
 
 .hangarHeader {
-    position: absolute;
-    top: 33px;
-    left: calc(50% - 130px);
+    position: relative;
+    min-height: 60px;
+    @include breakpoint('tablet') {
+        margin-bottom: 40px;
+    }
+    @include breakpoint('desktop') {
+        margin-bottom: 80px;
+    }
     .header {
+        @include centerer(true, false);
         margin: 0 auto;
-        width: 260px;
         text-align: center;
         margin: 0px auto;
+        min-width: 480px;
+        max-width: 914px;
         .hangarLogo {
             vertical-align: bottom;
             display: inline-block;
@@ -76,50 +80,91 @@
             width: 48px;
             height: 38.5px;
             background-size: 48px 38.5px;
+            @include breakpoint('tablet') {
+                width: 67.2px;
+                height: 53.9px;
+                background-size: 67.2px 53.9px;
+            }
+            @include breakpoint('desktop') {
+                width: 96px;
+                height: 77px;
+                background-size: 96px 77px;
+            }
         }
         .hangarSuper {
             padding-left: 8px;
             vertical-align: bottom;
             display: inline-block;
             font-family: SameSameButDifferent;
-            font-size: 24px;
+            @include res-font(320px, 24px, 768px, 48px, 1024px, 48px);
             color: #fff;
         }
     }
+}
+
+.row {
+    border: 1px solid red !important;
 }
 
 
 /*--------------------------------------------------------------------------------- searchbox */
 
 .searchbox {
-    position: absolute;
-    width: 260px;
-    text-align: center;
-    left: calc(50% - 130px);
-    top: 94px;
-    .fa-search {
-        position: absolute;
-	    top: 4px;
-	    right: 40px;
-        color: #ffef6f;
-    }
-    input {
-        margin-left: 10px;
-        width: 70%;
-        height: 20px;
-        font-size: 12px;
-        border-color: #cccccc;
-        border-style: solid;
-        padding-left: 20px;
-        padding-right: 35px;
-        background-color: #036482;
-        color: #ffffff;
-        border-radius: 50px;
-        border-width: 0px;
-        box-shadow: inset 0px 2px 4px 0px rgba(42, 42, 42, .31);
-    }
-    input:focus {
-        outline: none;
+    width: 100%;
+    position: relative;
+    .searchContainer {
+        @include centerer(true, false);
+        padding: 0;
+        text-align: center;
+        width: 209px;
+        @include breakpoint('tablet') {
+            width: 390px;
+        }
+        @include breakpoint('desktop') {
+            width: 414px;
+        }
+        .fa-search {
+            position: absolute;
+            top: 10%;
+            right: 6px;
+            color: #fdbf27;
+            @include res-font(320px, 14px, 768px, 17px, 1024px, 20px);
+            @include breakpoint('tablet') {
+                top: 18%;
+                right: 40px;
+            }
+            @include breakpoint('desktop') {
+                top: 22%;
+                right: 16px;
+            }
+        }
+        input {
+            //@include centerer(true, false);
+            @include center-block;
+            width: 209px;
+            height: 20px;
+            @include breakpoint('tablet') {
+                width: 330px;
+                height: 30px;
+            }
+            @include breakpoint('desktop') {
+                width: 414px;
+                height: 36px;
+            }
+            @include res-font(320px, 12px, 768px, 17px, 1024px, 17.3px);
+            border-color: #cccccc;
+            border-style: solid;
+            padding-left: 20px;
+            padding-right: 35px;
+            background-color: #036482;
+            color: #ffffff;
+            @include border-radius(50px);
+            border-width: 0px;
+            box-shadow: inset 0px 2px 4px 0px rgba(42, 42, 42, .31);
+        }
+        input:focus {
+            outline: none;
+        }
     }
 }
 
@@ -127,34 +172,35 @@
 /*--------------------------------------------------------------------------------- footer */
 
 footer {
-        background: #000;
-        background: rgba(0, 0, 0, 0.5);
-        position: fixed;
-        bottom: 0;
-        color: #ffef6f;
-        width: 100%;
-        height: 116px;
-        border: 1px solid #000;
-	        
-	    font-size: 5px;
-	    letter-spacing: 0.4px;
-
-	    display: flex !important;
-	    justify-content: center;
-	    flex-direction: column;
-	    text-align: center;
-
+    padding: 0;
+    margin: 0;
+    position: relative;
+    background: #000;
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    bottom: 0;
+    color: #ffef6f;
+    width: 100%;
+    height: 116px;
+    border: 1px solid #000;
+    @include res-font(320px, 5px, 768px, 11px, 1024px, 11px);
+    letter-spacing: 0.3px;
+    // display: flex !important;
+    //justify-content: center;
+    //flex-direction: column;
+    text-align: center;
     .footerContainer {
-
+        width: 100%;
+        @include centerer(true, true);
         .footer_inner_left {
-		    display: inline-block;
-		    width:50%;
-		    text-align:center;
+            display: inline-block;
+            width: 50%;
+            text-align: center;
         }
         .footer_inner_right {
-	    	display: inline-block;
-		    width:50%;
-		    text-align:center;
+            display: inline-block;
+            width: 50%;
+            text-align: center;
         }
     }
 }
@@ -248,7 +294,7 @@ footer {
 //////////////////////////////////////////////////////////////   webkit
 @-webkit-keyframes cloud_one {
     0% {
-        left: 300px;
+        left: 70%;
         opacity: 0;
     }
     5% {
@@ -265,7 +311,7 @@ footer {
 
 @-webkit-keyframes cloud_two {
     0% {
-        left: 200px;
+        left: 50%;
         opacity: 0;
     }
     5% {
@@ -282,7 +328,7 @@ footer {
 
 @-webkit-keyframes cloud_three {
     0% {
-        left: 420px;
+        left: 95%;
         opacity: 0;
     }
     5% {
@@ -300,7 +346,7 @@ footer {
 //////////////////////////////////////////////////////////////   moz
 @-moz-keyframes cloud_one {
     0% {
-        left: 300px;
+        left: 70%;
         opacity: 0;
     }
     5% {
@@ -317,7 +363,7 @@ footer {
 
 @-moz-keyframes cloud_two {
     0% {
-        left: 200px;
+        left: 50%;
         opacity: 0;
     }
     5% {
@@ -334,7 +380,7 @@ footer {
 
 @-moz-keyframes cloud_three {
     0% {
-        left: 420px;
+        left: 95%;
         opacity: 0;
     }
     5% {

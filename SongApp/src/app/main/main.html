@@ -1,41 +1,61 @@
-<div class="global-container">
-    <header>
-        <div>
-            <song-app-navbar/>
+<div class="container-fluid">
+    <div class="global-container">
+        <div class="row">
+            <header>
+                <div>
+                    <song-app-navbar></song-app-navbar>
+                </div>
+            </header>
         </div>
-    </header>
-    <section class="mainWrapper">
-        <div class="background">
-            <div class="clouds">
-                <div class="clouds_zero"></div>
-                <div class="clouds_one"></div>
-                <div class="clouds_two"></div>
-                <div class="clouds_three"></div>
+        <section class="mainWrapper">
+            <div class="background">
+                <div class="clouds">
+                    <div class="clouds_zero"></div>
+                    <div class="clouds_one"></div>
+                    <div class="clouds_two"></div>
+                    <div class="clouds_three"></div>
+                </div>
             </div>
-        </div>
-        <div class="hangarHeader">
-            <div class="header">
-                <div class="hangarLogo"></div>
-                <div class="hangarSuper">Hangar o’clock songs</div>
+            <div class="row">
+                <div class="xs-col-12">
+                    <div class="hangarHeader ">
+                        <div class="header">
+                            <div class="hangarLogo"></div>
+                            <div class="hangarSuper">Hangar o’clock songs</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class='searchbox'>
-            <a href="#" ng-click="searchSong()">
-                <i class="fa fa-search"></i>
-            </a>
-            <input type="text" placeholder="Search Music" maxlength="18" key-enter="searchSong()" ng-model="inputTerm"></input>
-        </div>
-        <div>
-            <list-items />
-        </div>
-        <div>
-            <preloader id="preloader" ng-show="isLoadingData" />
-        </div>
-    </section>
-    <footer>
+            <div class="row">
+                <div class="xs-col-12">
+                    <div class='searchbox'>
+                        <div class="searchContainer">
+                            <input type="text" placeholder="Search Music" maxlength="18" key-enter="searchSong()" ng-model="inputTerm"></input>
+                            <a href="#" ng-click="searchSong()">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="xs-col-12">
+                    <preloader id="preloader" ng-show="isLoadingData"></preloader>
+                </div>
+            </div>
+            <div class="row">
+                <div class="xs-col-12">
+                    <list-items></list-items>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<footer class="container-fluid">
+    <div class="footer">
         <div class="footerContainer">
             <div class="footer_inner_left">© 2011 The Hangar Interactive. All rights reserved</div>
             <div class="footer_inner_right">Privacy Policy | Terms of Use | Contact Us</div>
         </div>
-    </footer>
-</div>
+    </div>
+</footer>
