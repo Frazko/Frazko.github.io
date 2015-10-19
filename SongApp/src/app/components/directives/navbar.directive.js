@@ -20,6 +20,9 @@
         /** @ngInject */
         function NavbarController() {
 
+            /*
+            no actions for nav bar yet
+             */
 
         }
     }

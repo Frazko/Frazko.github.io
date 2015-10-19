@@ -1,12 +1,10 @@
+<header>
+    <div>
+        <song-app-navbar></song-app-navbar>
+    </div>
+</header>
 <div class="container-fluid">
     <div class="global-container">
-        <div class="row">
-            <header>
-                <div>
-                    <song-app-navbar></song-app-navbar>
-                </div>
-            </header>
-        </div>
         <section class="mainWrapper">
             <div class="background">
                 <div class="clouds">
@@ -19,10 +17,11 @@
             <div class="row">
                 <div class="xs-col-12">
                     <div class="hangarHeader ">
-                        <div class="header">
-                            <div class="hangarLogo"></div>
-                            <div class="hangarSuper">Hangar o’clock songs</div>
-                        </div>
+                        <!--<div class="header">-->
+                        <img class="hangarLogo" ng-src="assets/images/hangar_logo.png">
+                        <p class="hangarSuper">Hangar o’clock songs</p>
+                        </img>
+                        <!--</div>-->
                     </div>
                 </div>
             </div>
@@ -30,11 +29,14 @@
                 <div class="xs-col-12">
                     <div class='searchbox'>
                         <div class="searchContainer">
-                            <input type="text" placeholder="Search Music" maxlength="18" key-enter="searchSong()" ng-model="inputTerm"></input>
-                            <a href="#" ng-click="searchSong()">
-                                <i class="fa fa-search"></i>
-                            </a>
+                            <form name="searchBoxForm" novalidate>
+                                <input type="text" name="song" ng-change="searchValidation()" required placeholder="Search Music" key-enter="searchSong()" ng-model="inputTerm" ng-maxlength="18"></input>
+                                <a href="#" ng-click="searchSong()">
+                                    <i class="fa fa-search"></i>
+                                </a>
+                            </form>
                         </div>
+                            <p ng-show="searchError" class="errorMsg">Please enter song name.</p>
                     </div>
                 </div>
             </div>

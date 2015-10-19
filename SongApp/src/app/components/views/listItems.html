@@ -1,13 +1,17 @@
-<div class="playListGrid">
+
+<div class="playListGrid"  ng-hide="isLoadingData"> <!---->
     <ul class="flex-container">
-        <li class="flex-item {{getStripedRows($index)}}" ng-repeat="song in songs | filter:filterTerm" >
+        <li ng-show="!songs.length && searchActivated" class="errorMsg">
+            <p>No songs found</p>
+        </li>
+        <li class="flex-item {{getStripedRows($index)}} fadeIn staggerAnimated" ng-repeat="song in songs">
             <div class="leftGridItem">
                 <a href="{{getHttpURL(song.url)}}" target="_blank">
                     <div class="playBtn"></div>
                 </a>
                 <div class="playListItem">
                     <h1>{{song.songname | capitalize}}</h1>
-                    <p>{{song.artistname | capitalize}}</p>
+                    <p>{{song.artistname | capitalize}} </p>
                 </div>
             </div>
             <div class="rightGridItem">

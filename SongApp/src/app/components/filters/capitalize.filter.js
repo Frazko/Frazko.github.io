@@ -5,6 +5,9 @@
         .module('songApp')
         .filter('capitalize', capitalize);
 
+    /*
+    Capitalize Filter... for song names
+     */
     function capitalize() {
         return function(input) {
             return (!!input) ? input.replace(/([^\W_]+[^\s-]*) */g, function(txt) {

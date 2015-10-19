@@ -1,28 +1,33 @@
 .playListGrid {
-    @include centerer(true, false);
-    top: 142px;
-    height: 320px;
-    overflow: scroll;
+    margin-bottom: 40px;
+    height: 330px;
+
+
+    overflow: hidden;
+
     //
     @include breakpoint('tablet') {
         height: 410px;
-        top: 210px;
     }
     @include breakpoint('desktop') {
         height: 410px;
-        top: 260px;
     }
     .flex-container {
-        font-family: Arial, Serif;
-        width: 264px;
+        height: 320px;
+
+        overflow: hidden;
+
+
         padding: 0;
-        margin: 0;
+        font-family: Arial, Serif;
+        margin: 0 auto;
         list-style: none;
+        width: 260px;
         @include breakpoint('tablet') {
             width: 400px;
         }
         @include breakpoint('desktop') {
-            width: 440px;
+            width: 442px;
         }
         .flex-item {
             position: relative;

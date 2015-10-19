@@ -7,6 +7,10 @@
 
     /** @ngInject */
     function preloader() {
+
+        /*
+        get JSON preloader
+         */
         return {
             restrict: 'E',
             transclude: true,

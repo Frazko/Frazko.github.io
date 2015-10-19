@@ -6,67 +6,67 @@
         .controller('MainController', MainController);
 
     /** @ngInject */
-    function MainController($rootScope, $scope, $resource) {
-        MainController.$inject = ['$rootScope', '$scope', '$resource'];
-        console.log('MainController!!!');
+    function MainController($rootScope, $scope, JsonService, $filter) {
+        MainController.$inject = ['$rootScope', '$scope', 'JsonService', '$filter'];
+        //console.log('MainController!!!');
 
         $scope.inputTerm = "";
         $scope.filterTerm = "";
+        $scope.searchError = false;
+        $scope.searchActivated = false;
 
         $scope.songs = null;
-
-
         $scope.isLoadingData = false;
 
-
-
-
         $scope.searchSong = function() {
-            if ($scope.songs === null) {
+            if ($scope.searchValidation()) {return;}
 
-                $scope.isLoadingData = true;
-
-                console.log('searchSong');
-
-                var resource = $resource('http://localhost:3000/songs', {}, {
-                    get: {
-                        isArray: true
-                    }
+            /*Could have loaded the json just the first time and then search in the $scope.songs, 
+            //but for test instructions it`s like this
+            //if ($scope.songs === null) {*/
+            $scope.isLoadingData = true;
+            $scope.searchActivated=true;
+            JsonService.get()
+                .$promise.then(function(data) {
+                    $scope.songs = $filter('filter')(data, $scope.inputTerm);
+                    $scope.isLoadingData = false;
                 });
-
-                resource.get()
-                    .$promise.then(function(data) {
-                        console.log('Loading json...' + data);
-                        $scope.songs = data;
-                        $scope.isLoadingData = false;
-                    });
-
-            }
-
+            //}
             $scope.filterTerm = $scope.inputTerm;
-
         };
 
 
         /*
-
-        $scope.searchSong = function() {
-            console.log('searchSong');
-
-            console.log('$scope.songs: ' + $scope.songs);
-
-            if ($scope.songs === null) {
-                console.log('Loading json...');
-                getJsonListService.getData().then(function(data) {
-                    $scope.songs = data;
-                    console.log('>> MainController !! ' + $scope.songs);
-                });
+        Striped Rows
+         */
+        $scope.getStripedRows = function(id) {
+            if (id % 2 === 0) {
+                return 'at50';
+            } else {
+                return 'at30';
             }
-
-            $scope.filterTerm = $scope.inputTerm;
         };
-        */
 
+
+        /*
+        Validation for search input
+         */
+
+        $scope.searchValidation = function() {
+            //console.log('searchValidation: '+$scope.inputTerm);
+            //// Or $scope.inputTerm.length > 3 
+            if ($scope.inputTerm === undefined || $scope.inputTerm === "") {
+                $scope.searchError = true;
+            } else {
+                $scope.searchError = false;
+            }
+            return $scope.searchError;
+        };
+
+
+        /*
+        convert spotify URI to web URL
+         */
         $scope.getHttpURL = function(uri) {
             var res = '';
             var str = uri;
