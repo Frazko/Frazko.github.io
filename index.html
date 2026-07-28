@@ -277,10 +277,28 @@
       }
 
       .project {
-        padding: 24px;
         border-radius: 24px;
         border: 1px solid var(--line);
         background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+        overflow: hidden;
+      }
+
+      .project-art {
+        position: relative;
+        aspect-ratio: 16 / 9;
+        width: 100%;
+        background-color: #0e0a18;
+      }
+
+      .project-art img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .project-body {
+        padding: 24px;
       }
 
       .project-top {
@@ -398,8 +416,11 @@
 
         .panel-large,
         .panel-side,
-        .project,
         .capability {
+          padding: 20px;
+        }
+
+        .project-body {
           padding: 20px;
         }
 
@@ -493,94 +514,114 @@
 
           <div class="projects">
             <article class="project">
-              <div class="project-top">
-                <h3>Swapper Club</h3>
-                <span class="tag">Published</span>
+              <div class="project-art">
+                <img src="assets/apps/swapper-club.png" alt="Swapper Club app artwork" />
               </div>
-              <p>
-                A collectible sticker trading app focused on albums, swaps, ownership tracking and
-                community-driven content.
-              </p>
-              <div class="stack">
-                <span class="chip">Expo</span>
-                <span class="chip">React Native</span>
-                <span class="chip">TypeScript</span>
-                <span class="chip">Supabase</span>
-                <span class="chip">RevenueCat</span>
-                <span class="chip">AdMob</span>
-              </div>
-              <div class="project-links">
-                <a class="store-badge" href="https://apps.apple.com/us/app/swapper-club/id6774427126" target="_blank" rel="noreferrer" aria-label="Download Swapper Club on the App Store">
-                  <svg class="store-badge-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M8.2 17.8h7.6M9.8 6.1l6.9 11.7M7.3 10.4h9.4M14.2 6.1l-6.9 11.7" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                  <span class="store-badge-copy">
-                    <small>Download on the</small>
-                    <strong>App Store</strong>
-                  </span>
-                </a>
-              </div>
-            </article>
-
-            <article class="project">
-              <div class="project-top">
-                <h3>Aquiando</h3>
-                <span class="tag">In progress</span>
-              </div>
-              <p>
-                A location-aware mobile app built for real-world utility, field workflows, maps and
-                live device context.
-              </p>
-              <div class="stack">
-                <span class="chip">Expo</span>
-                <span class="chip">Maps</span>
-                <span class="chip">Notifications</span>
-                <span class="chip">Location</span>
+              <div class="project-body">
+                <div class="project-top">
+                  <h3>Swapper Club</h3>
+                  <span class="tag">Published</span>
+                </div>
+                <p>
+                  A collectible sticker trading app focused on albums, swaps, ownership tracking and
+                  community-driven content.
+                </p>
+                <div class="stack">
+                  <span class="chip">Expo</span>
+                  <span class="chip">React Native</span>
+                  <span class="chip">TypeScript</span>
+                  <span class="chip">Supabase</span>
+                  <span class="chip">RevenueCat</span>
+                  <span class="chip">AdMob</span>
+                </div>
+                <div class="project-links">
+                  <a class="store-badge" href="https://apps.apple.com/us/app/swapper-club/id6774427126" target="_blank" rel="noreferrer" aria-label="Download Swapper Club on the App Store">
+                    <svg class="store-badge-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M8.2 17.8h7.6M9.8 6.1l6.9 11.7M7.3 10.4h9.4M14.2 6.1l-6.9 11.7" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="store-badge-copy">
+                      <small>Download on the</small>
+                      <strong>App Store</strong>
+                    </span>
+                  </a>
+                </div>
               </div>
             </article>
 
             <article class="project">
-              <div class="project-top">
-                <h3>Convoy</h3>
-                <span class="tag">Published</span>
+              <div class="project-art">
+                <img src="assets/apps/aquiando.png" alt="Aquiando app artwork" />
               </div>
-              <p>
-                A mobile product for 4x4 groups, outdoor coordination, routes, planning and shared
-                trip context.
-              </p>
-              <div class="stack">
-                <span class="chip">Flutter</span>
-                <span class="chip">Riverpod</span>
-                <span class="chip">Supabase</span>
-                <span class="chip">GPX</span>
-              </div>
-              <div class="project-links">
-                <a class="store-badge" href="https://apps.apple.com/us/app/convoy/id6779014707" target="_blank" rel="noreferrer" aria-label="Download Convoy on the App Store">
-                  <svg class="store-badge-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M8.2 17.8h7.6M9.8 6.1l6.9 11.7M7.3 10.4h9.4M14.2 6.1l-6.9 11.7" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                  <span class="store-badge-copy">
-                    <small>Download on the</small>
-                    <strong>App Store</strong>
-                  </span>
-                </a>
+              <div class="project-body">
+                <div class="project-top">
+                  <h3>Aquiando</h3>
+                  <span class="tag">In progress</span>
+                </div>
+                <p>
+                  A location-aware mobile app built for real-world utility, field workflows, maps and
+                  live device context.
+                </p>
+                <div class="stack">
+                  <span class="chip">Expo</span>
+                  <span class="chip">Maps</span>
+                  <span class="chip">Notifications</span>
+                  <span class="chip">Location</span>
+                </div>
               </div>
             </article>
 
             <article class="project">
-              <div class="project-top">
-                <h3>ViberRoom</h3>
-                <span class="tag">Prototype</span>
+              <div class="project-art">
+                <img src="assets/apps/convoy.png" alt="Convoy app artwork" />
               </div>
-              <p>
-                A messaging app where each conversation can carry its own visual identity, with a
-                strong emphasis on product feel.
-              </p>
-              <div class="stack">
-                <span class="chip">Flutter</span>
-                <span class="chip">WebRTC</span>
-                <span class="chip">Supabase</span>
-                <span class="chip">RevenueCat</span>
+              <div class="project-body">
+                <div class="project-top">
+                  <h3>Convoy</h3>
+                  <span class="tag">Published</span>
+                </div>
+                <p>
+                  A mobile product for 4x4 groups, outdoor coordination, routes, planning and shared
+                  trip context.
+                </p>
+                <div class="stack">
+                  <span class="chip">Flutter</span>
+                  <span class="chip">Riverpod</span>
+                  <span class="chip">Supabase</span>
+                  <span class="chip">GPX</span>
+                </div>
+                <div class="project-links">
+                  <a class="store-badge" href="https://apps.apple.com/us/app/convoy/id6779014707" target="_blank" rel="noreferrer" aria-label="Download Convoy on the App Store">
+                    <svg class="store-badge-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path d="M8.2 17.8h7.6M9.8 6.1l6.9 11.7M7.3 10.4h9.4M14.2 6.1l-6.9 11.7" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="store-badge-copy">
+                      <small>Download on the</small>
+                      <strong>App Store</strong>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project">
+              <div class="project-art">
+                <img src="assets/apps/viberroom.png" alt="ViberRoom app artwork" />
+              </div>
+              <div class="project-body">
+                <div class="project-top">
+                  <h3>ViberRoom</h3>
+                  <span class="tag">Prototype</span>
+                </div>
+                <p>
+                  A messaging app where each conversation can carry its own visual identity, with a
+                  strong emphasis on product feel.
+                </p>
+                <div class="stack">
+                  <span class="chip">Flutter</span>
+                  <span class="chip">WebRTC</span>
+                  <span class="chip">Supabase</span>
+                  <span class="chip">RevenueCat</span>
+                </div>
               </div>
             </article>
           </div>
