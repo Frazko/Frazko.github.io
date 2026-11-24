@@ -16,6 +16,7 @@ export const ui = {
   technologies: text('Tecnologías y su función', 'Technologies and their role'),
   planned: text('En desarrollo', 'In development'),
   stores: text('Encuentra la app', 'Get the app'),
+  website: text('Explora la web', 'Explore the website'),
   language: text('Idioma', 'Language'),
 };
 
@@ -269,7 +270,7 @@ export const projects = {
     headline: text('La próxima gran historia empieza eligiendo la función.', 'Your next great story starts with choosing a showtime.'),
     story: [
       text('Menos tiempo saltando entre carteleras y más tiempo disfrutando el cine. Cines CR reúne películas, salas y horarios de Costa Rica para ayudarte a encontrar la salida que encaja contigo.', 'Less time jumping between cinema listings and more time enjoying the movies. Cines CR brings films, theaters and showtimes across Costa Rica together to help you find an outing that fits.'),
-      text('Explora qué hay en cartelera, descubre los detalles de una película y compara sus funciones desde una experiencia web en desarrollo.', 'Explore what is showing, discover movie details and compare showtimes in a web experience currently in development.'),
+      text('Explora qué hay en cartelera, descubre los detalles de una película y compara sus funciones desde la web.', 'Explore what is showing, discover movie details and compare showtimes on the website.'),
     ],
     technical: text('Plataforma de agregación con recolectores independientes por fuente, normalización y deduplicación de horarios. PostgreSQL almacena el catálogo y TMDB enriquece las películas. NestJS ofrece una API de lectura y Next.js presenta la experiencia web. El cliente Flutter corresponde a una fase futura.', 'An aggregation platform with independent source collectors, showtime normalization and deduplication. PostgreSQL stores the catalog and TMDB enriches movie information. NestJS provides a read API and Next.js presents the web experience. A Flutter client belongs to a future phase.'),
     branches: [

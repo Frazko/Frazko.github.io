@@ -225,7 +225,7 @@ function render() {
   const cardLinks = card.querySelector('.project-links');
   if (cardLinks) {
     const stores = node('section', 'detail-section detail-stores');
-    stores.append(node('h3', '', label('stores')), cardLinks.cloneNode(true));
+    stores.append(node('h3', '', label(cardLinks.dataset.linksLabel || 'stores')), cardLinks.cloneNode(true));
     content.append(stores);
   }
   observer.observe(map.canvas);
