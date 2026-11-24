@@ -6,8 +6,9 @@
     <title>Frazko Apps Lab</title>
     <meta
       name="description"
-      content="Frazko Apps Lab builds mobile apps, prototypes and product experiments across collectibles, messaging, communities and field tools."
+      content="Frazko Apps Lab builds mobile apps, web products and experiments across communities, shared memories, cinema, planning and field tools."
     />
+    <script src="assets/site.js" defer></script>
     <style>
       :root {
         color-scheme: dark;
@@ -65,8 +66,53 @@
         text-transform: uppercase;
       }
 
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 22px;
+      }
+
+      [hidden] {
+        display: none !important;
+      }
+
+      .language-switch {
+        display: inline-flex;
+        padding: 4px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .language-switch button {
+        min-width: 44px;
+        min-height: 40px;
+        border: 0;
+        border-radius: 8px;
+        background: transparent;
+        color: var(--muted);
+        font: inherit;
+        font-size: 0.875rem;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .language-switch button[aria-pressed="true"] {
+        background: rgba(155, 109, 255, 0.2);
+        color: var(--text);
+      }
+
+      a:focus-visible,
+      button:focus-visible {
+        outline: 2px solid var(--accent-2);
+        outline-offset: 4px;
+      }
+
       .nav-links {
         display: flex;
+        flex-wrap: wrap;
+        align-items: center;
         gap: 18px;
         color: var(--muted);
         font-size: 0.95rem;
@@ -166,7 +212,7 @@
 
       .store-badge-copy small {
         color: var(--muted);
-        font-size: 0.72rem;
+        font-size: 0.875rem;
         margin-bottom: 4px;
       }
 
@@ -303,6 +349,7 @@
 
       .project-top {
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
         gap: 12px;
@@ -317,7 +364,7 @@
       .tag {
         padding: 8px 12px;
         border-radius: 999px;
-        font-size: 0.82rem;
+        font-size: 0.875rem;
         color: #e8deff;
         background: rgba(155, 109, 255, 0.14);
         border: 1px solid rgba(155, 109, 255, 0.24);
@@ -335,6 +382,21 @@
         gap: 10px;
       }
 
+      .store-badge-unavailable {
+        border-style: dashed;
+        background: transparent;
+        color: var(--muted);
+      }
+
+      .store-badge-unavailable .store-badge-icon {
+        color: var(--muted);
+      }
+
+      .store-badge[href]:hover {
+        border-color: rgba(155, 109, 255, 0.6);
+        background: rgba(155, 109, 255, 0.12);
+      }
+
       .project-links {
         display: flex;
         flex-wrap: wrap;
@@ -345,7 +407,7 @@
       .chip {
         padding: 8px 11px;
         border-radius: 999px;
-        font-size: 0.82rem;
+        font-size: 0.875rem;
         color: #ddd3f6;
         border: 1px solid rgba(255, 255, 255, 0.08);
         background: rgba(255, 255, 255, 0.03);
@@ -432,70 +494,66 @@
           font-size: 2.8rem;
         }
       }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
     </style>
   </head>
   <body>
     <div class="page">
       <header class="nav">
         <a class="brand" href="#top">Frazko Apps Lab</a>
-        <nav class="nav-links">
-          <a href="#apps">Apps</a>
-          <a href="#services">What we build</a>
-          <a href="#stack">Stack</a>
-        </nav>
+        <div class="nav-actions">
+          <nav class="nav-links" aria-label="Main navigation" data-i18n-aria="nav.label">
+            <a data-i18n="nav.apps" href="#apps">Apps</a>
+            <a data-i18n="nav.services" href="#services">What we build</a>
+            <a data-i18n="nav.stack" href="#stack">Stack</a>
+          </nav>
+          <div class="language-switch" role="group" aria-label="Language" data-i18n-aria="language.label" hidden>
+            <button type="button" data-language="es" lang="es" aria-label="Español" aria-pressed="false">ES</button>
+            <button type="button" data-language="en" lang="en" aria-label="English" aria-pressed="true">EN</button>
+          </div>
+        </div>
       </header>
 
       <main id="top">
         <section class="hero">
-          <div class="eyebrow">Independent mobile products, shipped with care</div>
-          <h1>We build mobile apps that people actually use.</h1>
-          <p class="hero-copy">
-            Frazko Apps Lab is where Francisco Murillo builds and ships apps, prototypes
-            and product experiments across collectibles, real-time communication,
-            communities and field tools.
-          </p>
+          <div data-i18n="hero.eyebrow" class="eyebrow">Independent products, shipped with care</div>
+          <h1 data-i18n="hero.title">We build apps that people actually use.</h1>
+          <p data-i18n="hero.copy" class="hero-copy">Frazko Apps Lab is where Francisco Murillo builds and ships apps, prototypes and product experiments across communities, shared memories, cinema, planning and field tools.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#apps">View apps</a>
-            <a class="button button-secondary" href="mailto:fmurillo@gmail.com">Get in touch</a>
+            <a data-i18n="hero.apps" class="button button-primary" href="#apps">View apps</a>
+            <a data-i18n="hero.contact" class="button button-secondary" href="mailto:fmurillo@gmail.com">Get in touch</a>
           </div>
-
           <div class="hero-grid">
             <div class="panel panel-large">
               <div class="hero-stats">
                 <div class="stat">
-                  <strong>4</strong>
-                  <span>Active app tracks across collectibles, mapping, communities and messaging.</span>
+                  <strong>10</strong>
+                  <span data-i18n="stats.projects">Apps and experiments across mobile, web and nearby communication.</span>
                 </div>
                 <div class="stat">
                   <strong>iOS + Android</strong>
-                  <span>Built for production mobile delivery with Expo, Flutter and native services.</span>
+                  <span data-i18n="stats.mobile">Built for iPhone and Android with Expo, Flutter and native services.</span>
                 </div>
                 <div class="stat">
-                  <strong>Realtime</strong>
-                  <span>Supabase-backed systems for auth, storage, chat, state sync and live updates.</span>
+                  <strong data-i18n="stats.realtime.title">Realtime</strong>
+                  <span data-i18n="stats.realtime">Supabase-backed systems for auth, storage, chat, state sync and live updates.</span>
                 </div>
                 <div class="stat">
-                  <strong>Ship-focused</strong>
-                  <span>From idea to release, including subscriptions, ads, review fixes and launch polish.</span>
+                  <strong data-i18n="stats.shipping.title">Ship-focused</strong>
+                  <span data-i18n="stats.shipping">From idea to release, including subscriptions, ads, review fixes and launch polish.</span>
                 </div>
               </div>
             </div>
-
             <aside class="panel panel-side">
-              <h2>Current focus</h2>
+              <h2 data-i18n="focus.title">Current focus</h2>
               <div class="bullet-list">
-                <div class="bullet">
-                  <strong>Consumer apps</strong>
-                  <span>Products people open often, understand quickly and keep using.</span>
-                </div>
-                <div class="bullet">
-                  <strong>Fast iteration</strong>
-                  <span>Lean cycles across UX, backend, monetization and store release work.</span>
-                </div>
-                <div class="bullet">
-                  <strong>Clean foundations</strong>
-                  <span>Typed codebases, pragmatic architecture and shipping discipline over noise.</span>
-                </div>
+                <div class="bullet"><strong data-i18n="focus.consumer.title">Consumer apps</strong><span data-i18n="focus.consumer">Products people open often, understand quickly and keep using.</span></div>
+                <div class="bullet"><strong data-i18n="focus.iteration.title">Fast iteration</strong><span data-i18n="focus.iteration">Lean cycles across UX, backend, monetization and store release work.</span></div>
+                <div class="bullet"><strong data-i18n="focus.foundations.title">Clean foundations</strong><span data-i18n="focus.foundations">Typed codebases, pragmatic architecture and shipping discipline.</span></div>
               </div>
             </aside>
           </div>
@@ -503,29 +561,20 @@
 
         <section class="section" id="apps">
           <div class="section-head">
-            <div>
-              <h2 class="section-title">Featured apps</h2>
-            </div>
-            <p>
-              A small portfolio of products in active development, each aimed at a clear use case
-              instead of a generic demo.
-            </p>
+            <div><h2 data-i18n="apps.title" class="section-title">Apps &amp; experiments</h2></div>
+            <p data-i18n="apps.copy">Published apps, products in development and focused experiments. Each one starts with a clear use case.</p>
           </div>
-
           <div class="projects">
-            <article class="project">
+            <article class="project" id="app-swapper-club">
               <div class="project-art">
-                <img src="assets/apps/swapper-club.png" alt="Swapper Club app artwork" />
+                <img src="assets/apps/swapper-club.png" alt="Swapper Club artwork with collectible cards, a sticker album and a swap interface in purple and gold." data-i18n-alt="app.swapper-club.alt" loading="lazy" decoding="async" width="768" height="512" />
               </div>
               <div class="project-body">
                 <div class="project-top">
                   <h3>Swapper Club</h3>
-                  <span class="tag">Published</span>
+                  <span data-i18n="status.unavailable" class="tag">No public listing</span>
                 </div>
-                <p>
-                  A collectible sticker trading app focused on albums, swaps, ownership tracking and
-                  community-driven content.
-                </p>
+                <p data-i18n="app.swapper-club.description">A collectible sticker trading app focused on albums, swaps, ownership tracking and community-driven content.</p>
                 <div class="stack">
                   <span class="chip">Expo</span>
                   <span class="chip">React Native</span>
@@ -535,54 +584,42 @@
                   <span class="chip">AdMob</span>
                 </div>
                 <div class="project-links">
-                  <a class="store-badge" href="https://apps.apple.com/us/app/swapper-club/id6774427126" target="_blank" rel="noreferrer" aria-label="Download Swapper Club on the App Store">
-                    <svg class="store-badge-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                      <path d="M8.2 17.8h7.6M9.8 6.1l6.9 11.7M7.3 10.4h9.4M14.2 6.1l-6.9 11.7" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <span class="store-badge-copy">
-                      <small>Download on the</small>
-                      <strong>App Store</strong>
-                    </span>
-                  </a>
-                </div>
+<div class="store-badge store-badge-unavailable" data-store-app="Swapper Club" data-store-platform="App Store" aria-label="Swapper Club is not currently available on App Store"><svg class="store-badge-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8.2 17.8h7.6M9.8 6.1l6.9 11.7M7.3 10.4h9.4M14.2 6.1l-6.9 11.7" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="store-badge-copy"><small data-i18n="store.unavailable">Not available</small><strong>App Store</strong></span></div>
+<div class="store-badge store-badge-unavailable" data-store-app="Swapper Club" data-store-platform="Google Play" aria-label="Swapper Club is not currently available on Google Play"><svg class="store-badge-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 3.2 15.5 12 4 20.8V3.2Z" fill="#59b6ff"/><path d="m4 3.2 13 7.5-1.5 1.3L4 3.2Z" fill="#60d4a1"/><path d="m4 20.8 13-7.5-1.5-1.3L4 20.8Z" fill="#ff7c91"/><path d="m17 10.7 2.2 1.3-2.2 1.3-1.5-1.3 1.5-1.3Z" fill="#ffce73"/></svg><span class="store-badge-copy"><small data-i18n="store.unavailable">Not available</small><strong>Google Play</strong></span></div>
+</div>
               </div>
             </article>
 
-            <article class="project">
+            <article class="project" id="app-aquiando">
               <div class="project-art">
-                <img src="assets/apps/aquiando.png" alt="Aquiando app artwork" />
+                <img src="assets/apps/aquiando.png" alt="Aquiando artwork with a dark terrain map, location markers and a turquoise route." data-i18n-alt="app.aquiando.alt" loading="lazy" decoding="async" width="768" height="512" />
               </div>
               <div class="project-body">
                 <div class="project-top">
                   <h3>Aquiando</h3>
-                  <span class="tag">In progress</span>
+                  <span data-i18n="status.progress" class="tag">In development</span>
                 </div>
-                <p>
-                  A location-aware mobile app built for real-world utility, field workflows, maps and
-                  live device context.
-                </p>
+                <p data-i18n="app.aquiando.description">A location-aware mobile app built for real-world utility, field workflows, maps and live device context.</p>
                 <div class="stack">
                   <span class="chip">Expo</span>
-                  <span class="chip">Maps</span>
-                  <span class="chip">Notifications</span>
-                  <span class="chip">Location</span>
+                  <span data-i18n="chip.maps" class="chip">Maps</span>
+                  <span data-i18n="chip.notifications" class="chip">Notifications</span>
+                  <span data-i18n="chip.location" class="chip">Location</span>
                 </div>
+
               </div>
             </article>
 
-            <article class="project">
+            <article class="project" id="app-convoy">
               <div class="project-art">
-                <img src="assets/apps/convoy.png" alt="Convoy app artwork" />
+                <img src="assets/apps/convoy.png" alt="Convoy artwork with offroad vehicles on a mountain trail and a live route map." data-i18n-alt="app.convoy.alt" loading="lazy" decoding="async" width="768" height="512" />
               </div>
               <div class="project-body">
                 <div class="project-top">
                   <h3>Convoy</h3>
-                  <span class="tag">Published</span>
+                  <span data-i18n="status.published" class="tag">Published</span>
                 </div>
-                <p>
-                  A mobile product for 4x4 groups, outdoor coordination, routes, planning and shared
-                  trip context.
-                </p>
+                <p data-i18n="app.convoy.description">A mobile product for 4x4 groups, outdoor coordination, routes, planning and shared trip context.</p>
                 <div class="stack">
                   <span class="chip">Flutter</span>
                   <span class="chip">Riverpod</span>
@@ -590,38 +627,148 @@
                   <span class="chip">GPX</span>
                 </div>
                 <div class="project-links">
-                  <a class="store-badge" href="https://apps.apple.com/us/app/convoy/id6779014707" target="_blank" rel="noreferrer" aria-label="Download Convoy on the App Store">
-                    <svg class="store-badge-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                      <path d="M8.2 17.8h7.6M9.8 6.1l6.9 11.7M7.3 10.4h9.4M14.2 6.1l-6.9 11.7" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <span class="store-badge-copy">
-                      <small>Download on the</small>
-                      <strong>App Store</strong>
-                    </span>
-                  </a>
-                </div>
+<a class="store-badge" href="https://apps.apple.com/app/id6779014707" target="_blank" rel="noopener noreferrer" data-store-app="Convoy" data-store-platform="App Store" aria-label="Download Convoy from App Store"><svg class="store-badge-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8.2 17.8h7.6M9.8 6.1l6.9 11.7M7.3 10.4h9.4M14.2 6.1l-6.9 11.7" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="store-badge-copy"><small data-i18n="store.apple">Download on the</small><strong>App Store</strong></span></a>
+<a class="store-badge" href="https://play.google.com/store/apps/details?id=com.frazko.convoy" target="_blank" rel="noopener noreferrer" data-store-app="Convoy" data-store-platform="Google Play" aria-label="Download Convoy from Google Play"><svg class="store-badge-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 3.2 15.5 12 4 20.8V3.2Z" fill="#59b6ff"/><path d="m4 3.2 13 7.5-1.5 1.3L4 3.2Z" fill="#60d4a1"/><path d="m4 20.8 13-7.5-1.5-1.3L4 20.8Z" fill="#ff7c91"/><path d="m17 10.7 2.2 1.3-2.2 1.3-1.5-1.3 1.5-1.3Z" fill="#ffce73"/></svg><span class="store-badge-copy"><small data-i18n="store.google">Get it on</small><strong>Google Play</strong></span></a>
+</div>
               </div>
             </article>
 
-            <article class="project">
+            <article class="project" id="app-viberroom">
               <div class="project-art">
-                <img src="assets/apps/viberroom.png" alt="ViberRoom app artwork" />
+                <img src="assets/apps/viberroom.png" alt="ViberRoom artwork with layered chat rooms in purple, blue and amber." data-i18n-alt="app.viberroom.alt" loading="lazy" decoding="async" width="768" height="512" />
               </div>
               <div class="project-body">
                 <div class="project-top">
                   <h3>ViberRoom</h3>
-                  <span class="tag">Prototype</span>
+                  <span data-i18n="status.prototype" class="tag">Prototype</span>
                 </div>
-                <p>
-                  A messaging app where each conversation can carry its own visual identity, with a
-                  strong emphasis on product feel.
-                </p>
+                <p data-i18n="app.viberroom.description">A messaging app where each conversation can carry its own visual identity, with a strong emphasis on product feel.</p>
                 <div class="stack">
                   <span class="chip">Flutter</span>
                   <span class="chip">WebRTC</span>
                   <span class="chip">Supabase</span>
                   <span class="chip">RevenueCat</span>
                 </div>
+
+              </div>
+            </article>
+
+            <article class="project" id="app-seeya">
+              <div class="project-art">
+                <img src="assets/apps/seeya.webp" alt="SeeYa concept artwork with friends at sunset, a shared calendar and floating coral and violet panels." data-i18n-alt="app.seeya.alt" loading="lazy" decoding="async" width="1672" height="941" />
+              </div>
+              <div class="project-body">
+                <div class="project-top">
+                  <h3>SeeYa</h3>
+                  <span data-i18n="status.progress" class="tag">In development</span>
+                </div>
+                <p data-i18n="app.seeya.description">Make time for your people. Private friend circles, shared places and social planning built around availability and real-life moments.</p>
+                <div class="stack">
+                  <span class="chip">Flutter</span>
+                  <span class="chip">Dart</span>
+                  <span class="chip">Supabase</span>
+                </div>
+
+              </div>
+            </article>
+
+            <article class="project" id="app-rewind">
+              <div class="project-art">
+                <img src="assets/apps/rewind.webp" alt="REWIND concept artwork with an aqua video gallery, shared adventure memories and its white brush wordmark." data-i18n-alt="app.rewind.alt" loading="lazy" decoding="async" width="1672" height="941" />
+              </div>
+              <div class="project-body">
+                <div class="project-top">
+                  <h3>REWIND</h3>
+                  <span data-i18n="status.android" class="tag">Available on Android</span>
+                </div>
+                <p data-i18n="app.rewind.description">Relive the moment. Bring shared videos and group memories together, and see the same experience from different perspectives.</p>
+                <div class="stack">
+                  <span class="chip">Flutter</span>
+                  <span class="chip">Supabase</span>
+                  <span class="chip">YouTube</span>
+                </div>
+                <div class="project-links">
+<div class="store-badge store-badge-unavailable" data-store-app="REWIND" data-store-platform="App Store" aria-label="REWIND is not currently available on App Store"><svg class="store-badge-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8.2 17.8h7.6M9.8 6.1l6.9 11.7M7.3 10.4h9.4M14.2 6.1l-6.9 11.7" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="store-badge-copy"><small data-i18n="store.unavailable">Not available</small><strong>App Store</strong></span></div>
+<a class="store-badge" href="https://play.google.com/store/apps/details?id=com.frazko.rewind" target="_blank" rel="noopener noreferrer" data-store-app="REWIND" data-store-platform="Google Play" aria-label="Download REWIND from Google Play"><svg class="store-badge-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 3.2 15.5 12 4 20.8V3.2Z" fill="#59b6ff"/><path d="m4 3.2 13 7.5-1.5 1.3L4 3.2Z" fill="#60d4a1"/><path d="m4 20.8 13-7.5-1.5-1.3L4 20.8Z" fill="#ff7c91"/><path d="m17 10.7 2.2 1.3-2.2 1.3-1.5-1.3 1.5-1.3Z" fill="#ffce73"/></svg><span class="store-badge-copy"><small data-i18n="store.google">Get it on</small><strong>Google Play</strong></span></a>
+</div>
+              </div>
+            </article>
+
+            <article class="project" id="app-cines-cr">
+              <div class="project-art">
+                <img src="assets/apps/cines-cr.webp" alt="Cines CR concept artwork with a red cinema auditorium, original movie posters and golden showtime panels." data-i18n-alt="app.cines-cr.alt" loading="lazy" decoding="async" width="1672" height="941" />
+              </div>
+              <div class="project-body">
+                <div class="project-top">
+                  <h3>Cines CR</h3>
+                  <span data-i18n="status.progress" class="tag">In development</span>
+                </div>
+                <p data-i18n="app.cines-cr.description">Find your next movie night. Cinema listings, movie details and showtimes from theaters across Costa Rica, together in one app.</p>
+                <div class="stack">
+                  <span class="chip">Flutter</span>
+                  <span class="chip">NestJS</span>
+                  <span class="chip">Supabase</span>
+                  <span class="chip">TMDB</span>
+                </div>
+
+              </div>
+            </article>
+
+            <article class="project" id="app-week-planner">
+              <div class="project-art">
+                <img src="assets/apps/week-planner.webp" alt="Week Planner concept artwork with a seven-day calendar, activity checkmarks and habit charts in sage and lilac." data-i18n-alt="app.week-planner.alt" loading="lazy" decoding="async" width="1672" height="941" />
+              </div>
+              <div class="project-body">
+                <div class="project-top">
+                  <h3>Week Planner</h3>
+                  <span data-i18n="status.progress" class="tag">In development</span>
+                </div>
+                <p data-i18n="app.week-planner.description">Plan your week and understand your days. A thoughtful space for activities, habits, personal reflection and a more balanced use of time.</p>
+                <div class="stack">
+                  <span class="chip">Flutter</span>
+                  <span class="chip">Dart</span>
+                  <span class="chip">Supabase</span>
+                </div>
+
+              </div>
+            </article>
+
+            <article class="project" id="app-quoteflow">
+              <div class="project-art">
+                <img src="assets/apps/quoteflow.webp" alt="QuoteFlow concept artwork with precision automotive parts, a catalog and a floating quotation panel in amber." data-i18n-alt="app.quoteflow.alt" loading="lazy" decoding="async" width="1672" height="941" />
+              </div>
+              <div class="project-body">
+                <div class="project-top">
+                  <h3>QuoteFlow</h3>
+                  <span data-i18n="status.prototype" class="tag">Prototype</span>
+                </div>
+                <p data-i18n="app.quoteflow.description">An experimental parts assistant for exploring a catalog, checking vehicle compatibility and preparing clear, itemized quotes.</p>
+                <div class="stack">
+                  <span class="chip">Next.js</span>
+                  <span class="chip">TypeScript</span>
+                  <span class="chip">SQLite</span>
+                </div>
+
+              </div>
+            </article>
+
+            <article class="project" id="app-mesh-lab">
+              <div class="project-art">
+                <img src="assets/apps/mesh-lab.webp" alt="Mesh Lab concept artwork with nearby phones connected by luminous cyan links over a terrain map." data-i18n-alt="app.mesh-lab.alt" loading="lazy" decoding="async" width="1672" height="941" />
+              </div>
+              <div class="project-body">
+                <div class="project-top">
+                  <h3>Mesh Lab</h3>
+                  <span data-i18n="status.lab" class="tag">Lab / SDK</span>
+                </div>
+                <p data-i18n="app.mesh-lab.description">A nearby communication lab and SDK for exchanging text, location and voice notes between phones without internet for local transport.</p>
+                <div class="stack">
+                  <span class="chip">Flutter</span>
+                  <span class="chip">Rust</span>
+                  <span data-i18n="chip.bluetooth" class="chip">Bluetooth</span>
+                  <span class="chip">Mesh Field SDK</span>
+                </div>
+
               </div>
             </article>
           </div>
@@ -629,51 +776,31 @@
 
         <section class="section" id="services">
           <div class="section-head">
-            <div>
-              <h2 class="section-title">What we build</h2>
-            </div>
-            <p>
-              The lab is centered on mobile-first software with product depth, operational realism
-              and a bias toward shipping.
-            </p>
+            <div><h2 data-i18n="services.title" class="section-title">What we build</h2></div>
+            <p data-i18n="services.copy">The lab is centered on useful software, thoughtful product design and the work it takes to ship.</p>
           </div>
-
           <div class="capabilities">
-            <div class="capability">
-              <strong>Mobile apps</strong>
-              <span>Consumer products for iPhone and Android with real release constraints in mind.</span>
-            </div>
-            <div class="capability">
-              <strong>Realtime systems</strong>
-              <span>Chat, sync, notifications and app flows that depend on fresh shared state.</span>
-            </div>
-            <div class="capability">
-              <strong>Monetization</strong>
-              <span>Subscriptions, paywalls, ad integrations and the practical details around them.</span>
-            </div>
-            <div class="capability">
-              <strong>Product iteration</strong>
-              <span>Rapid cycles across design, implementation, testing, release and reviewer feedback.</span>
-            </div>
+            <div class="capability"><strong data-i18n="services.mobile.title">Mobile apps</strong><span data-i18n="services.mobile">Consumer products for iPhone and Android, from first prototype to store release.</span></div>
+            <div class="capability"><strong data-i18n="services.realtime.title">Realtime systems</strong><span data-i18n="services.realtime">Chat, sync, notifications and app flows that depend on fresh shared state.</span></div>
+            <div class="capability"><strong data-i18n="services.monetization.title">Monetization</strong><span data-i18n="services.monetization">Subscriptions, paywalls, ad integrations and the practical details around them.</span></div>
+            <div class="capability"><strong data-i18n="services.iteration.title">Product iteration</strong><span data-i18n="services.iteration">Rapid cycles across design, implementation, testing, release and reviewer feedback.</span></div>
           </div>
         </section>
 
         <section class="section" id="stack">
           <div class="section-head">
-            <div>
-              <h2 class="section-title">Core stack</h2>
-            </div>
-            <p>
-              Tools chosen for speed, maintainability and production delivery rather than trend-chasing.
-            </p>
+            <div><h2 data-i18n="stack.title" class="section-title">Core stack</h2></div>
+            <p data-i18n="stack.copy">Tools chosen for speed, maintainability and production delivery.</p>
           </div>
-
           <div class="stack">
             <span class="chip">Expo</span>
             <span class="chip">React Native</span>
             <span class="chip">Flutter</span>
             <span class="chip">TypeScript</span>
             <span class="chip">Dart</span>
+            <span class="chip">Rust</span>
+            <span class="chip">Next.js</span>
+            <span class="chip">NestJS</span>
             <span class="chip">Supabase</span>
             <span class="chip">Postgres</span>
             <span class="chip">RevenueCat</span>
@@ -685,7 +812,7 @@
       </main>
 
       <footer class="footer">
-        <div>Frazko Apps Lab · Built by Francisco Murillo</div>
+        <div data-i18n="footer">Frazko Apps Lab · Built by Francisco Murillo</div>
         <div class="footer-links">
           <a href="mailto:fmurillo@gmail.com">fmurillo@gmail.com</a>
         </div>
