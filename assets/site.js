@@ -9,6 +9,8 @@
     "nav.services": "What we build",
     "nav.stack": "Stack",
     "language.label": "Language",
+    "details.open": "View details",
+    "details.openAria": "View details of {app}",
     "hero.eyebrow": "Independent products, shipped with care",
     "hero.title": "We build apps that people actually use.",
     "hero.copy": "Frazko Apps Lab is where Francisco Murillo builds and ships apps, prototypes and product experiments across communities, shared memories, cinema, planning and field tools.",
@@ -85,6 +87,8 @@
     "nav.services": "Qué creamos",
     "nav.stack": "Tecnologías",
     "language.label": "Idioma",
+    "details.open": "Ver detalles",
+    "details.openAria": "Ver detalles de {app}",
     "hero.eyebrow": "Productos independientes, creados con cuidado",
     "hero.title": "Creamos apps que la gente usa de verdad.",
     "hero.copy": "Frazko Apps Lab es donde Francisco Murillo crea y publica apps, prototipos y experimentos de comunidades, recuerdos compartidos, cine, planificación y herramientas de campo.",
@@ -197,9 +201,15 @@
         .replace("{store}", element.dataset.storePlatform));
     });
 
+    document.querySelectorAll("[data-project-details]").forEach((button) => {
+      const name = button.closest(".project").querySelector("h3").textContent;
+      button.setAttribute("aria-label", copy["details.openAria"].replace("{app}", name));
+    });
+
     buttons.forEach((button) => {
       button.setAttribute("aria-pressed", String(button.dataset.language === language));
     });
+    document.dispatchEvent(new CustomEvent("portfolio:languagechange", { detail: { language } }));
   }
 
   applyLanguage(initialLanguage);

@@ -9,6 +9,7 @@
       content="Frazko Apps Lab builds mobile apps, web products and experiments across communities, shared memories, cinema, planning and field tools."
     />
     <script src="assets/site.js" defer></script>
+    <script type="module" src="assets/project-details.js"></script>
     <style>
       :root {
         color-scheme: dark;
@@ -500,6 +501,7 @@
         }
       }
     </style>
+    <link rel="stylesheet" href="assets/project-details.css" />
   </head>
   <body>
     <div class="page">
@@ -584,9 +586,10 @@
                   <span class="chip">AdMob</span>
                 </div>
                 <div class="project-links">
-<div class="store-badge store-badge-unavailable" data-store-app="Swapper Club" data-store-platform="App Store" aria-label="Swapper Club is not currently available on App Store"><svg class="store-badge-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8.2 17.8h7.6M9.8 6.1l6.9 11.7M7.3 10.4h9.4M14.2 6.1l-6.9 11.7" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="store-badge-copy"><small data-i18n="store.unavailable">Not available</small><strong>App Store</strong></span></div>
-<div class="store-badge store-badge-unavailable" data-store-app="Swapper Club" data-store-platform="Google Play" aria-label="Swapper Club is not currently available on Google Play"><svg class="store-badge-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 3.2 15.5 12 4 20.8V3.2Z" fill="#59b6ff"/><path d="m4 3.2 13 7.5-1.5 1.3L4 3.2Z" fill="#60d4a1"/><path d="m4 20.8 13-7.5-1.5-1.3L4 20.8Z" fill="#ff7c91"/><path d="m17 10.7 2.2 1.3-2.2 1.3-1.5-1.3 1.5-1.3Z" fill="#ffce73"/></svg><span class="store-badge-copy"><small data-i18n="store.unavailable">Not available</small><strong>Google Play</strong></span></div>
+<div class="store-badge store-badge-unavailable" data-store-app="Swapper Club" data-store-platform="App Store" aria-label="Swapper Club is not currently available on App Store"><span class="store-badge-copy"><small data-i18n="store.unavailable">Not available</small><strong>App Store</strong></span></div>
+<div class="store-badge store-badge-unavailable" data-store-app="Swapper Club" data-store-platform="Google Play" aria-label="Swapper Club is not currently available on Google Play"><span class="store-badge-copy"><small data-i18n="store.unavailable">Not available</small><strong>Google Play</strong></span></div>
 </div>
+                <button type="button" class="details-button" data-project-details="swapper-club" data-i18n="details.open" aria-label="View details of Swapper Club" aria-haspopup="dialog" aria-controls="project-dialog" hidden>View details</button>
               </div>
             </article>
 
@@ -607,6 +610,7 @@
                   <span data-i18n="chip.location" class="chip">Location</span>
                 </div>
 
+                <button type="button" class="details-button" data-project-details="aquiando" data-i18n="details.open" aria-label="View details of Aquiando" aria-haspopup="dialog" aria-controls="project-dialog" hidden>View details</button>
               </div>
             </article>
 
@@ -627,9 +631,10 @@
                   <span class="chip">GPX</span>
                 </div>
                 <div class="project-links">
-<a class="store-badge" href="https://apps.apple.com/app/id6779014707" target="_blank" rel="noopener noreferrer" data-store-app="Convoy" data-store-platform="App Store" aria-label="Download Convoy from App Store"><svg class="store-badge-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8.2 17.8h7.6M9.8 6.1l6.9 11.7M7.3 10.4h9.4M14.2 6.1l-6.9 11.7" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="store-badge-copy"><small data-i18n="store.apple">Download on the</small><strong>App Store</strong></span></a>
-<a class="store-badge" href="https://play.google.com/store/apps/details?id=com.frazko.convoy" target="_blank" rel="noopener noreferrer" data-store-app="Convoy" data-store-platform="Google Play" aria-label="Download Convoy from Google Play"><svg class="store-badge-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 3.2 15.5 12 4 20.8V3.2Z" fill="#59b6ff"/><path d="m4 3.2 13 7.5-1.5 1.3L4 3.2Z" fill="#60d4a1"/><path d="m4 20.8 13-7.5-1.5-1.3L4 20.8Z" fill="#ff7c91"/><path d="m17 10.7 2.2 1.3-2.2 1.3-1.5-1.3 1.5-1.3Z" fill="#ffce73"/></svg><span class="store-badge-copy"><small data-i18n="store.google">Get it on</small><strong>Google Play</strong></span></a>
+<a class="store-badge" href="https://apps.apple.com/app/id6779014707" target="_blank" rel="noopener noreferrer" data-store-app="Convoy" data-store-platform="App Store" aria-label="Download Convoy from App Store"><span class="store-logo store-logo--apple"><img src="assets/stores/badges.png" width="190" height="148" alt="" decoding="async" /></span></a>
+<a class="store-badge" href="https://play.google.com/store/apps/details?id=com.frazko.convoy" target="_blank" rel="noopener noreferrer" data-store-app="Convoy" data-store-platform="Google Play" aria-label="Download Convoy from Google Play"><span class="store-logo store-logo--google"><img src="assets/stores/badges.png" width="190" height="148" alt="" decoding="async" /></span></a>
 </div>
+                <button type="button" class="details-button" data-project-details="convoy" data-i18n="details.open" aria-label="View details of Convoy" aria-haspopup="dialog" aria-controls="project-dialog" hidden>View details</button>
               </div>
             </article>
 
@@ -650,6 +655,7 @@
                   <span class="chip">RevenueCat</span>
                 </div>
 
+                <button type="button" class="details-button" data-project-details="viberroom" data-i18n="details.open" aria-label="View details of ViberRoom" aria-haspopup="dialog" aria-controls="project-dialog" hidden>View details</button>
               </div>
             </article>
 
@@ -669,6 +675,7 @@
                   <span class="chip">Supabase</span>
                 </div>
 
+                <button type="button" class="details-button" data-project-details="seeya" data-i18n="details.open" aria-label="View details of SeeYa" aria-haspopup="dialog" aria-controls="project-dialog" hidden>View details</button>
               </div>
             </article>
 
@@ -688,9 +695,10 @@
                   <span class="chip">YouTube</span>
                 </div>
                 <div class="project-links">
-<div class="store-badge store-badge-unavailable" data-store-app="REWIND" data-store-platform="App Store" aria-label="REWIND is not currently available on App Store"><svg class="store-badge-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8.2 17.8h7.6M9.8 6.1l6.9 11.7M7.3 10.4h9.4M14.2 6.1l-6.9 11.7" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="store-badge-copy"><small data-i18n="store.unavailable">Not available</small><strong>App Store</strong></span></div>
-<a class="store-badge" href="https://play.google.com/store/apps/details?id=com.frazko.rewind" target="_blank" rel="noopener noreferrer" data-store-app="REWIND" data-store-platform="Google Play" aria-label="Download REWIND from Google Play"><svg class="store-badge-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 3.2 15.5 12 4 20.8V3.2Z" fill="#59b6ff"/><path d="m4 3.2 13 7.5-1.5 1.3L4 3.2Z" fill="#60d4a1"/><path d="m4 20.8 13-7.5-1.5-1.3L4 20.8Z" fill="#ff7c91"/><path d="m17 10.7 2.2 1.3-2.2 1.3-1.5-1.3 1.5-1.3Z" fill="#ffce73"/></svg><span class="store-badge-copy"><small data-i18n="store.google">Get it on</small><strong>Google Play</strong></span></a>
+<div class="store-badge store-badge-unavailable" data-store-app="REWIND" data-store-platform="App Store" aria-label="REWIND is not currently available on App Store"><span class="store-badge-copy"><small data-i18n="store.unavailable">Not available</small><strong>App Store</strong></span></div>
+<a class="store-badge" href="https://play.google.com/store/apps/details?id=com.frazko.rewind" target="_blank" rel="noopener noreferrer" data-store-app="REWIND" data-store-platform="Google Play" aria-label="Download REWIND from Google Play"><span class="store-logo store-logo--google"><img src="assets/stores/badges.png" width="190" height="148" alt="" decoding="async" /></span></a>
 </div>
+                <button type="button" class="details-button" data-project-details="rewind" data-i18n="details.open" aria-label="View details of REWIND" aria-haspopup="dialog" aria-controls="project-dialog" hidden>View details</button>
               </div>
             </article>
 
@@ -705,12 +713,13 @@
                 </div>
                 <p data-i18n="app.cines-cr.description">Find your next movie night. Cinema listings, movie details and showtimes from theaters across Costa Rica, together in one app.</p>
                 <div class="stack">
-                  <span class="chip">Flutter</span>
+                  <span class="chip">Next.js</span>
                   <span class="chip">NestJS</span>
                   <span class="chip">Supabase</span>
                   <span class="chip">TMDB</span>
                 </div>
 
+                <button type="button" class="details-button" data-project-details="cines-cr" data-i18n="details.open" aria-label="View details of Cines CR" aria-haspopup="dialog" aria-controls="project-dialog" hidden>View details</button>
               </div>
             </article>
 
@@ -730,6 +739,7 @@
                   <span class="chip">Supabase</span>
                 </div>
 
+                <button type="button" class="details-button" data-project-details="week-planner" data-i18n="details.open" aria-label="View details of Week Planner" aria-haspopup="dialog" aria-controls="project-dialog" hidden>View details</button>
               </div>
             </article>
 
@@ -749,6 +759,7 @@
                   <span class="chip">SQLite</span>
                 </div>
 
+                <button type="button" class="details-button" data-project-details="quoteflow" data-i18n="details.open" aria-label="View details of QuoteFlow" aria-haspopup="dialog" aria-controls="project-dialog" hidden>View details</button>
               </div>
             </article>
 
@@ -769,6 +780,7 @@
                   <span class="chip">Mesh Field SDK</span>
                 </div>
 
+                <button type="button" class="details-button" data-project-details="mesh-lab" data-i18n="details.open" aria-label="View details of Mesh Lab" aria-haspopup="dialog" aria-controls="project-dialog" hidden>View details</button>
               </div>
             </article>
           </div>
@@ -818,5 +830,18 @@
         </div>
       </footer>
     </div>
+    <dialog id="project-dialog" class="project-dialog" aria-labelledby="detail-title">
+      <header class="detail-header">
+        <h2 id="detail-title"></h2>
+        <div class="detail-controls">
+          <div class="language-switch" role="group" aria-label="Language" data-i18n-aria="language.label">
+            <button type="button" data-language="es" lang="es" aria-label="Español" aria-pressed="false">ES</button>
+            <button type="button" data-language="en" lang="en" aria-label="English" aria-pressed="true">EN</button>
+          </div>
+          <button type="button" class="detail-close" data-close-details aria-label="Close details" autofocus></button>
+        </div>
+      </header>
+      <div class="detail-content"></div>
+    </dialog>
   </body>
 </html>
